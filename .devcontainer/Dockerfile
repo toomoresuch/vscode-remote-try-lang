@@ -55,7 +55,7 @@ RUN npm install -g --unsafe-perm=true \
     gatsby-cli
 
 RUN npm cache clean --force
-RUN gatsby telemetry --disable
+# RUN gatsby telemetry --disable
 
 WORKDIR /tmp
 
@@ -66,4 +66,4 @@ RUN mkdir -p apps && \
 USER ${USER}
 RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
 RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
-RUN echo 'alias gatsby-server="gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gatsby-server="gatsby telemetry --disable && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
