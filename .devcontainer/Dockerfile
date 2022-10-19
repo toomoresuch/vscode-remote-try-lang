@@ -15,7 +15,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qq && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends build-essential libgl1-mesa-glx && \
+    apt-get install -y --no-install-recommends build-essential && \
+    apt-get install -y --no-install-recommends libglu1-mesa libglu1 libxi6 libgconf-2-4 && \
+    #libglu1-mesa-glx
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
