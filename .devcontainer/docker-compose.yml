@@ -1,18 +1,18 @@
-version: '3'
+version: '3.2'
 
 services:
-#   db:
-#     image: postgres:latest
-#     environment:
-#       - "POSTGRES_USER=postgres"
-#       - "POSTGRES_PASSWORD=mysecretpassword1234"
-#     ports:
-#       - "5432:5432"
+  #   db:
+  #     image: postgres:latest
+  #     environment:
+  #       - "POSTGRES_USER=postgres"
+  #       - "POSTGRES_PASSWORD=mysecretpassword1234"
+  #     ports:
+  #       - "5432:5432"
 
-#   redis:
-#     image: redis:latest
-#     ports:
-#       - "6379:6379"
+  #   redis:
+  #     image: redis:latest
+  #     ports:
+  #       - "6379:6379"
 
   web:
     image: vscode-remote-try-nodejs_devcontainer
@@ -34,4 +34,6 @@ services:
     ports:
       - 3000:80
     volumes:
-      - ../apps:/tmp/apps
+      - type: bind
+        source: ../apps
+        target: /tmp/apps
