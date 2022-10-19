@@ -1,9 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/javascript-node
+// https://containers.dev/implementors/json_reference/
 {
     "name": "Development Containers: Node.js",
     "dockerComposeFile": "docker-compose.yml",
     "service": "web",
+    // "runServices": [],
     "workspaceFolder": "/tmp/apps",
     /*
 	"build": {
@@ -57,4 +59,14 @@
 
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "node"
+
+    /*
+    "remoteEnv": {},
+    "updateRemoteUserUID" true,
+    "userEnvProbe": loginInteractiveShell,
+    "overrideCommand": true,
+    "features": {},
+    "overrideFeatureInstallOrder": [],
+    "shutdownAction": stopCompose,
+    */
 }
