@@ -1,36 +1,36 @@
 version: '3.2'
 
 services:
-  # db:
-  #   image: postgres:latest
-  #   environment:
-  #     - "POSTGRES_USER=postgres"
-  #     - "POSTGRES_PASSWORD=mysecretpassword1234"
-  #   ports:
-  #     - "5432:5432"
+  db:
+    image: postgres:latest
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=mysecretpassword1234"
+    ports:
+      - "5432:5432"
 
-  # redis:
-  #   image: redis:latest
-  #   ports:
-  #     - "6379:6379"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
 
   web:
-    image: vscode-remote-try-nodejs_devcontainer
-    container_name: vscode-remote-try-nodejs_devcontainer
+    image: vscode-remote-try-ruby_devcontainer
+    container_name: vscode-remote-try-ruby_devcontainer
     build: .
     stdin_open: true
     tty: true
 
-    # environment:
-    #   - "DATABASE_HOST=db"
-    #   - "DATABASE_PORT=5432"
-    #   - "DATABASE_USER=postgres"
-    #   - "DATABASE_PASSWORD=mysecretpassword1234"
-    #   - "REDIS_URL=redis://redis:6379"
+    environment:
+      - "DATABASE_HOST=db"
+      - "DATABASE_PORT=5432"
+      - "DATABASE_USER=postgres"
+      - "DATABASE_PASSWORD=mysecretpassword1234"
+      - "REDIS_URL=redis://redis:6379"
 
-    # links:
-    #   - db
-    #   - redis
+    links:
+      - db
+      - redis
 
     ports:
       - 3000:80

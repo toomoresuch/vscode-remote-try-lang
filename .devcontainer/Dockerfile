@@ -1,7 +1,7 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/javascript-node/.devcontainer/base.Dockerfile
-# [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 16, 14, 12, 16-bullseye, 14-bullseye, 12-bullseye, 16-buster, 14-buster, 12-buster
-ARG VARIANT=14-buster
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/master/containers/ruby
+# [Choice] Ruby version: 3, 3.1, 3.0, 2, 2.7, 2.6, 3-bullseye, 3.1-bullseye, 3.0-bullseye, 2-bullseye, 2.7-bullseye, 2.6-bullseye, 3-buster, 3.1-buster, 3.0-buster, 2-buster, 2.7-buster, 2.6-buster
+ARG VARIANT=2.6-bullseye
+FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qq && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends build-essential libgl1-mesa-glx && \
+    apt-get install -y --no-install-recommends build-essential libpq-dev nodejs sqlite3 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -26,41 +26,15 @@ RUN apt-get update -qq && \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-# ELM & EJS
-RUN npm install -g --unsafe-perm=true --no-optional \
-    ejs-cli \
-    html-minify
-
-# NCU & IMAGEMIN
-RUN npm install -g --unsafe-perm=true \
-    npm-check-updates \
-    imagemin-cli \
-    imagemin-gifsicle \
-    imagemin-keep-folder \
-    imagemin-mozjpeg \
-    imagemin-pngquant
-
-# ELM
-# RUN npm install -g --unsafe-perm=true \
-# elm \
-# elm-format \
-# elm-live \
-# elm-test \
-
-# GATSBY
-RUN npm install -g --unsafe-perm=true \
-    gatsby-cli
-
-RUN npm cache clean --force
-RUN gatsby telemetry --disable
+RUN echo 'gem: --no-document' > /etc/gemrc && \
+    gem install bundler
 
 WORKDIR /tmp
 
-ARG USER="node"
+ARG USER="vscode"
 RUN mkdir -p apps && \
     chown -R ${USER}:${USER} apps
 
 USER ${USER}
-RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
-RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
-RUN echo 'alias gatsby-server="gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias middleman-server="bundle exec middleman -p 80"' >> ~/.bashrc
+RUN echo 'alias middleman-build="bundle exec middleman build --verbose || bundle exec middleman build --verbose"' >> ~/.bashrc
