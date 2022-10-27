@@ -15,8 +15,8 @@ services:
   #     - "6379:6379"
 
   web:
-    image: vscode-remote-try-nodejs_devcontainer
-    container_name: vscode-remote-try-nodejs_devcontainer
+    image: vscode-remote-try-ocaml_devcontainer
+    container_name: vscode-remote-try-ocaml_devcontainer
     build: .
     stdin_open: true
     tty: true
