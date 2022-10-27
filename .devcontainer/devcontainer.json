@@ -16,7 +16,6 @@
 		"args": { "VARIANT": "16-bullseye" }
 	},
     */
-
     // Configure tool-specific properties.
     "customizations": {
         // Configure properties specific to VS Code.
@@ -37,10 +36,8 @@
             ]
         }
     },
-
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [3000],
-
     // Use 'portsAttributes' to set default properties for specific forwarded ports. More info: https://code.visualstudio.com/docs/remote/devcontainerjson-reference.
     "portsAttributes": {
         "3000": {
@@ -48,18 +45,14 @@
             "onAutoForward": "notify"
         }
     },
-
     // Use 'otherPortsAttributes' to configure any ports that aren't configured using 'portsAttributes'.
     // "otherPortsAttributes": {
     // 		"onAutoForward": "silent"
     // },
-
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "yarn install",
-
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "node"
-
     /*
     "remoteEnv": {},
     "updateRemoteUserUID" true,
