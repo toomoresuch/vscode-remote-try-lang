@@ -2,19 +2,19 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/javascript-node
 // https://containers.dev/implementors/json_reference/
 {
-    "name": "Development Containers: Node.js",
+    "name": "Development Containers: Haskell",
     "dockerComposeFile": "docker-compose.yml",
     "service": "web",
     // "runServices": [],
     "workspaceFolder": "/tmp/apps",
     /*
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
-		// Append -bullseye or -buster to pin to an OS version.
-		// Use -bullseye variants on local arm64/Apple Silicon.
-		"args": { "VARIANT": "16-bullseye" }
-	},
+    "build": {
+        "dockerfile": "Dockerfile",
+        // Update 'VARIANT' to pick a Node version: 16, 14, 12.
+        // Append -bullseye or -buster to pin to an OS version.
+        // Use -bullseye variants on local arm64/Apple Silicon.
+        "args": { "VARIANT": "16-bullseye" }
+    },
     */
     // Configure tool-specific properties.
     "customizations": {
@@ -31,7 +31,10 @@
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
-                "dbaeumer.vscode-eslint"
+                // "dbaeumer.vscode-eslint",
+                // Install Visual Studio Code Extension for Haskell
+                // https://marketplace.visualstudio.com/items?itemName=haskell.haskell
+                "haskell.haskell"
             ]
         }
     },
@@ -51,7 +54,7 @@
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "yarn install",
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "node"
+    "remoteUser": "vscode"
     /*
     "remoteEnv": {},
     "updateRemoteUserUID" true,
