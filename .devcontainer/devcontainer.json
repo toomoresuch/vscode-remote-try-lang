@@ -1,8 +1,9 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/javascript-node
-// https://containers.dev/implementors/json_reference/
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
     "name": "Development Containers: Node.js",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    // "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18-bullseye",
     "dockerComposeFile": "docker-compose.yml",
     "service": "web",
     "workspaceFolder": "/tmp/apps",
@@ -30,6 +31,7 @@
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
+                // "streetsidesoftware.code-spell-checker",
                 "dbaeumer.vscode-eslint",
                 "bradlc.vscode-tailwindcss"
             ]
@@ -37,17 +39,16 @@
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [3000],
-    // Use 'portsAttributes' to set default properties for specific forwarded ports. More info: https://code.visualstudio.com/docs/remote/devcontainerjson-reference.
+
+    // Use 'portsAttributes' to set default properties for specific forwarded ports.
+    // More info: https://containers.dev/implementors/json_reference/#port-attributes
     "portsAttributes": {
-        "3000": {
+        "9000": {
             "label": "Hello Remote World",
             "onAutoForward": "notify"
         }
     },
-    // Use 'otherPortsAttributes' to configure any ports that aren't configured using 'portsAttributes'.
-    // "otherPortsAttributes": {
-    // 		"onAutoForward": "silent"
-    // },
+
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "yarn install",
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
