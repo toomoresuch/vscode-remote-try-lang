@@ -1,12 +1,11 @@
-
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
     "name": "Development Containers: Ruby",
-    // "image": "mcr.microsoft.com/devcontainers/javascript-node:16-bullseye",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    // "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18-bullseye",
     "dockerComposeFile": "docker-compose.yml",
     "service": "web",
-    // "runServices": [],
     "workspaceFolder": "/tmp/apps",
 
     // Features to add to the dev container. More info: https://containers.dev/features.
@@ -25,7 +24,7 @@
                 }
             },
             "extensions": [
-                // "dbaeumer.vscode-eslint"
+                // "streetsidesoftware.code-spell-checker",
             ]
         }
     },
@@ -34,17 +33,13 @@
     // "forwardPorts": [3000],
 
     // Use 'portsAttributes' to set default properties for specific forwarded ports.
+    // More info: https://containers.dev/implementors/json_reference/#port-attributes
     "portsAttributes": {
-        "3000": {
+        "9000": {
             "label": "Hello Remote World",
             "onAutoForward": "notify"
         }
     },
-
-    // Use 'otherPortsAttributes' to configure any ports that aren't configured using 'portsAttributes'.
-    // "otherPortsAttributes": {
-    // 		"onAutoForward": "silent"
-    // },
 
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "yarn install",
@@ -52,13 +47,4 @@
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
     "remoteUser": "vscode"
-    /*
-    "remoteEnv": {},
-    "updateRemoteUserUID" true,
-    "userEnvProbe": loginInteractiveShell,
-    "overrideCommand": true,
-    "features": {},
-    "overrideFeatureInstallOrder": [],
-    "shutdownAction": stopCompose,
-    */
 }
