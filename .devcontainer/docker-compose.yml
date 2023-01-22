@@ -21,6 +21,12 @@ services:
     stdin_open: true
     tty: true
 
+    logging:
+      driver: json-file
+      options:
+        max-file: '1'
+        max-size: 3m
+
     # environment:
     #   - "DATABASE_HOST=db"
     #   - "DATABASE_PORT=5432"
