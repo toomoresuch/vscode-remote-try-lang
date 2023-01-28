@@ -17,7 +17,8 @@ RUN apt-get update -qq && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends build-essential libpq-dev nodejs sqlite3 && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
+
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
