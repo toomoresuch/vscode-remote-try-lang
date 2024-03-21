@@ -56,6 +56,7 @@ RUN npm install -g --unsafe-perm=true \
 # gatsby-cli@2.19.3
 
 RUN npm cache clean --force
+RUN npm cache verify
 # RUN gatsby telemetry --disable
 
 WORKDIR /tmp
