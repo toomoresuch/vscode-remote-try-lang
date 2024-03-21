@@ -30,8 +30,9 @@ RUN apt-get update -qq && \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-# EJS & NCU
+# NPM & EJS & NCU
 RUN npm install -g --unsafe-perm=true --omit=optional \
+    npm@latest \
     ejs-cli \
     html-minify \
     npm-check-updates
@@ -44,7 +45,6 @@ RUN npm install -g --unsafe-perm=true --omit=optional \
 # imagemin-pngquant
 
 # ELM
-# RUN npm install -g --unsafe-perm=true \
 # elm \
 # elm-format \
 # elm-live \
