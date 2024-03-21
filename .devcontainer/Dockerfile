@@ -30,15 +30,13 @@ RUN apt-get update -qq && \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-# ELM & EJS
-RUN npm install -g --unsafe-perm=true --no-optional \
+# EJS & NCU
+RUN npm install -g --unsafe-perm=true --omit=optional \
     ejs-cli \
-    html-minify
-
-# NCU & IMAGEMIN
-RUN npm install -g --unsafe-perm=true \
+    html-minify \
     npm-check-updates
 
+# IMAGEMIN
 # imagemin-cli \
 # imagemin-gifsicle \
 # imagemin-keep-folder \
