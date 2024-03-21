@@ -30,12 +30,14 @@ RUN apt-get update -qq && \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-# NPM & EJS & NCU
+# NPM & EJS & NCU & AICOMMITS
 RUN npm install -g --unsafe-perm=true --omit=optional \
     npm@latest \
     ejs-cli \
     html-minify \
-    npm-check-updates
+    npm-check-updates \
+    # https://github.com/Nutlope/aicommits
+    aicommits
 
 # IMAGEMIN
 # imagemin-cli \
@@ -69,3 +71,4 @@ USER ${USER}
 RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
 RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
 RUN echo 'alias gatsby-server="gatsby telemetry --disable && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+# RUN aicommits config set OPENAI_KEY=""
