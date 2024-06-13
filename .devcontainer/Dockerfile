@@ -71,4 +71,5 @@ USER ${USER}
 RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
 RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
 RUN echo 'alias gatsby-server="gatsby telemetry --disable && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias astro-dev="npm run dev -- --host 0.0.0.0"' >> ~/.bashrc
 # RUN aicommits config set OPENAI_KEY=""
