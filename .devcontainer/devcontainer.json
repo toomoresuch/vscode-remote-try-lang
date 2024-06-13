@@ -18,7 +18,23 @@
         "vscode": {
             "settings": {},
             "extensions": [
-                "streetsidesoftware.code-spell-checker"
+                "aaron-bond.better-comments",
+                "astro-build.astro-vscode",
+                "bradlc.vscode-tailwindcss",
+                "christian-kohler.path-intellisense",
+                "esbenp.prettier-vscode",
+                "formulahendry.auto-rename-tag",
+                "GitHub.copilot-chat",
+                "GitHub.copilot",
+                "leodevbro.blockman",
+                "mhutchie.git-graph",
+                "ms-azuretools.vscode-docker",
+                "MS-CEINTL.vscode-language-pack-ja",
+                "ms-vscode-remote.remote-containers",
+                "oderwat.indent-rainbow",
+                "sohamkamani.code-eol",
+                "streetsidesoftware.code-spell-checker",
+                "vscode-icons-team.vscode-icons"
             ]
         }
     },
