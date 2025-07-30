@@ -1,7 +1,7 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.195.0/containers/javascript-node/
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 2x-bookworm
 
-ARG VARIANT=20-bookworm
+ARG VARIANT=22-bookworm
 FROM mcr.microsoft.com/devcontainers/javascript-node:${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
